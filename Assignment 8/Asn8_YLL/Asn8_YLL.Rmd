@@ -1,0 +1,54 @@
+---
+title: "Asn8"
+author: "Yen-Lin Lai"
+date: "12/5/2021"
+output: html_document
+---
+```{r cars}
+library(tm)
+library(SnowballC)
+library(wordcloud)
+library(RColorBrewer)
+
+filepath <- "https://pauladaunt.com/books/Golding,%20William%20-%20Lord%20of%20the%20Flies%20v1.0.txt"
+text <- readLines(filepath)
+lof <- Corpus(VectorSource(text))
+toSpace <- content_transformer(function (x , pattern ) gsub(pattern, " ", x))
+lof <- tm_map(lof, toSpace, "/")
+lof <- tm_map(lof, toSpace, "@")
+lof <- tm_map(lof, toSpace, "\\|")
+# Convert the text to lower case
+lof <- tm_map(lof, content_transformer(tolower))
+# Remove numbers
+lof <- tm_map(lof, removeNumbers)
+# Remove english common stopwords
+lof <- tm_map(lof, removeWords, stopwords(kind="english"))
+# Remove punctuations
+lof <- tm_map(lof, removePunctuation)
+# Eliminate extra white spaces
+lof <- tm_map(lof, stripWhitespace)
+# Text stemming
+lof <- tm_map(lof, stemDocument)
+inspect(lof)
+
+dtm <- TermDocumentMatrix(lof)
+m <- as.matrix(dtm)
+v <- sort(rowSums(m),decreasing=TRUE)
+d <- data.frame(word = names(v),freq=v)
+head(d,10)
+
+##1.
+str(d)
+
+##2.
+
+wordcloud(words = d$word, freq = d$freq, min.freq = 1,max.words=200, random.order=FALSE, rot.per=0.35,colors=brewer.pal(8, "Dark2"))
+
+
+##3.
+wordralph <- findAssocs(dtm,"ralph",corlimit=0.15)
+wordralph
+
+wordpiggi<- findAssocs(dtm,"piggi",corlimit=0.15)
+wordpiggi
+```
