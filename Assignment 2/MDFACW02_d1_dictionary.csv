@@ -1,0 +1,22 @@
+VarID,VariableName,Description,UnitOfMeasure,CodeSet
+autopsy,Autopsy,This field indicates whether or not an autopsy was conducted on an individual. ,,CAUTO
+bdate,Date of birth.,Worker's date of birth. ,Calendar date,
+cvs,Vital status EOS 1983,Field records the vital status of a worker as of 12/31/1983. ,,CCVS
+dcity,The city of death.,City or town where an individual died. ,Not applicable.,
+dcounty,The county of death.,This field contains the county in which an individual died. ,,
+ddate,Date of death.,Worker's date of death. ,Calendar date,
+dla,Date last alive.,This field records the date of last confirmed vital status. ,Calendar years,
+dmvdate,Activity date returned by DMV.,Field contains the latest transaction date with the Ohio DMV. ,Calendar years,
+dmvflag,Submitted to Ohio DMV in 1988.,This field contains a flag indicating whether or not a record was submitted to the Ohio Department  of Motor Vehicles (DMV) in 1988. ,,CDMV
+drace,Race on death certificate.,Race of an individual as recorded on the death certificate. ,,CDRACE
+dsex,Sex on death certificate.,This field denotes the sex of the individual as recorded on the death certificate. ,,CDSEX
+dstate,The state of death.,This field contains the US Postal Service abbreviation for the state of death. ,,CDSTATE
+educ,Education,The highest level of education attained by a worker while employed at the Mound Plant. ,Not applicable.,CEDUC
+hiredate,Date of first hire at Mound.,Worker's date of first hire at the Mound Plant. ,Calendar date,
+icda8,Cause of death - ICDA 8th revision.,"The underlying cause of death coded to the International Classification of Diseases (ICDA),  Adapted for use in the United States, Eighth Revision. ",Not applicable.,
+orauid,Oak Ridge assigned id number.,This field contains a unique identification number assigned to a worker by Oak Ridge Institute  for Science and Education (ORISE) for use in CEDR. ,,
+race,Race of worker.,The race of the worker. ,,CRACE
+seq_no,Sequence Number of Row,Sequence Number of Row ,,
+sex,Sex,The sex of the worker. ,Not applicable.,CSEX
+ssa861,Results of a 1986 SSA submission.,This field contains vital status information provided by the SSA in 1986.  Earnings records for the year 1984 were  search by the SSA therefore an end of study date of 12/31/1983 was established for this follow-up effort. ,,CSSA
+termdate,Date of last termination from Mound.,Worker's date of last termination from the Mound Plant. ,Calendar date,
